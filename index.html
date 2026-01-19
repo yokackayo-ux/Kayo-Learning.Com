@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kayo Music Player</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+  <div id="splashScreen">
+    <h1>HERE</h1>
+    <h1>ENJOY</h1>
+    <h1>LISTENING</h1>
+    <div class="logo">🎵 Kayo Music</div>
+  </div>
+  <!-- Main Page -->
+  <div id="mainPage">
+    <header>
+   
+    <style>font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .navbar {
+            display: flex;
+            background-color: #333;
+            color: white;
+            padding: 14px;
+            align-items: center;
+        }
+        .menu-icon {
+            font-size: 20px;
+            cursor: pointer;
+            display: block;
+        }
+        .menu {
+            display:flex;
+            flex-direction: column;
+            background-color: #444;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            overflow:hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+        }
+        .menu a {
+            padding: 12px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #555;
+        }
+        .menu a:hover {
+            background-color: #555;
+        }
+        .menu.show {
+            max-height: 500px; /* Adjust based on your menu size */
+        }
+        .close-btn {
+            font-size: 28px;
+            padding: 12px;
+            text-align: right;
+            cursor: pointer;
+        }
+     
+    </style>
+
+
+
+    <div class="navbar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    <div class="menu" id="navMenu">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <a href="kayoy.html">settings</a>
+        <a href="#">themes</a>
+        <a href="#">Video</a>
+        <a href="#">Mine</a>
+    </div>
+  
+  
+   
+      <div class="search-bar">
+        <input type="text" placeholder="Search My Music & Video" />
+        <i class="fas fa-search"></i>
+      </div>
+      <i class="fas fa-crown premium-icon"></i>
+     
+  </header>
+
+    <nav class="tabs">
+      <id contenteditable=""
+      <button class="tab active">Songs</button>
+      <button class="tab">Playlists</button>
+      <button class="tab">Artists</button>
+      <button class="tab">Albums</button>
+      <button class="tab">Genres</button>
+    </nav>
+      <audio controls>
+        <source src="" type=""
+      </audio>
+        <input type="range" value="0" id="progress">
+      <div class="controls">
+        <div><i class="fa-solid fa-backward"></i></div>
+        <div onclick="playpause()"><i class="fas fa-backward" id="ctrlIcon"></i></div>
+        <div> <i class="fa-solid fas-play"></i></div>
+        <div><i class="fas fa-forward"></i></div>
+      </div>
+    </div>
+        <script>
+          
+      function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.classList.toggle("show");
+        }
+
+        // Close the menu if clicking outside
+        window.onclick = function(event) {
+            var menu = document.getElementById("navMenu");
+            var menuIcon = document.querySelector(".menu-icon");
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        };
+      let progress=document.getElementById("progress");
+  let song=document.getElementById("song");
+let ctrlIcon=document.getElementById("ctrlIcon");
+ 
+    song.onloadmetadata=function(){
+      progress.max=song.duration;
+        progress.value=song.currentTime;
+    }
+      function playpause(){
+        if(ctrlIcon.classlist.contains("fa-pause")}{
+          song.pause();
+          ctrlIcon.classlist.remove("fa-pause");
+           ctrlIcon.classlist.add("fa-play");
+    }
+   else{
+            song.play();
+               ctrlIcon.classlist.add("fa-pause");
+           ctrlIcon.classlist.remove("fa-play");
+        }
+      </script>
+ <nav class="bottom-nav">
+      <i class="fas fa-home active"></i>
+      <i class="fas fa-music"></i>
+      <i class="fas fa-video"></i>
+      <i class="fas fa-user"></i>
+    </nav>
+    </div>
+      
+  <script src="euy.js" ></script>
+  
+</body>
+</html>
